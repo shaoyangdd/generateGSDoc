@@ -1,0 +1,49 @@
+<idea-plugin version="2">
+  <id>com.ctt.format</id>
+  <name>generateGS</name>
+  <version>1.0</version>
+  <vendor email="chengtt1992@163.com" url="http://www.yourcompany.com">generateGSCTT</vendor>
+
+  <description><![CDATA[
+
+    ]]></description>
+
+  <change-notes><![CDATA[
+      Add change notes here.<br>
+      <em>most HTML tags may be used</em>
+    ]]>
+  </change-notes>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/build_number_ranges.html for description -->
+  <idea-version since-build="145.0"/>
+
+  <!-- please see http://www.jetbrains.org/intellij/sdk/docs/basics/getting_started/plugin_compatibility.html
+       on how to target different products -->
+  <!-- uncomment to enable plugin in all products
+  <depends>com.intellij.modules.lang</depends>
+  -->
+
+  <extensions defaultExtensionNs="com.intellij">
+    <!-- Add your extensions here -->
+    <applicationConfigurable instance="com.ctt.format.setting.FormatConfigurable"/>
+    <applicationService serviceInterface="com.ctt.format.setting.FormatSetting"
+                        serviceImplementation="com.ctt.format.setting.FormatSetting"/>
+  </extensions>
+
+  <actions>
+    <!-- Add your actions here -->
+    <action id="generateGSDoc" class="com.ctt.format.GenerateGSAction" text="generateGSDoc">
+      <add-to-group group-id="GenerateGroup" anchor="last" />
+    </action>
+  </actions>
+
+  <project-components>
+    <!-- Add your project components here -->
+  </project-components>
+
+  <application-components>
+    <!--<component>-->
+    <!--<implementation-class>MyComponent</implementation-class>-->
+    <!--</component>-->
+  </application-components>
+</idea-plugin>
